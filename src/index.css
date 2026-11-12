@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #0A0F14;
+  --color-teal-deep: #0F3D3E;
+  --color-teal-pine: #2E6F73;
+  --color-sage: #7FB388;
+  --color-parchment: #EADCC8;
+  --color-copper: #C6601F;
+  --color-paper: #F7EFE3;
+
+  --color-navy: #0A0F14;
+  --color-royal: #2E6F73;
+  --color-cyan: #7FB388;
+  --color-bg: #EADCC8;
+  --color-card: #F7EFE3;
+  --color-ink: #0A0F14;
+  --color-muted: #4A5D5E;
+  --color-success: #7FB388;
+  --color-warning: #C6601F;
+  --color-danger: #B93822;
+
+  --font-serif: 'Georgia', 'Cambria', 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: #0A0F14;
+    background-color: #EADCC8;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-vintage-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.015em;
+  }
+
+  button,
+  a,
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom warm archival scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(46, 111, 115, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 61, 62, 0.6);
+}
+
+/* Vintage architectural grid on parchment */
+.bg-neural-grid {
+  background-color: #EADCC8;
+  background-image:
+    radial-gradient(rgba(15, 61, 62, 0.11) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(247, 239, 227, 0.45), rgba(234, 220, 200, 0.9));
+  background-size: 24px 24px, 100% 100%;
+}
+
+/* Deep Obsidian night grid for dark hero / auth frames */
+.bg-obsidian-grid {
+  background-color: #0A0F14;
+  background-image:
+    radial-gradient(rgba(127, 179, 136, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 80% 15%, rgba(46, 111, 115, 0.28), transparent 45%),
+    radial-gradient(circle at 12% 85%, rgba(198, 96, 31, 0.14), transparent 45%);
+  background-size: 26px 26px, 100% 100%, 100% 100%;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+  }
+}
